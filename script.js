@@ -1,32 +1,53 @@
+let x0 = 2.9;
+const tol = 0.0001; 
+const h = 0.00001 * tol;
 
-
-console.log(`${x0}`);
-console.log(`minha função é ${funcao}`);
-console.log(`minha função é x ${-(entrada1)}`);
-
-function crieFuncao(expression) {
-    return function (x) {
-        return eval(expression);
-    };
+function f(x) {
+    return - 0.0024 * Math.pow(x, 7) + 0.0767 * Math.pow(x, 6) - 1.483 * Math.pow(x, 5) + 18.0422 * Math.pow(x, 4) - 136.0762 * Math.pow(x, 3) + 597.7246 * Math.pow(x, 2) - 1312.3865 * x + 924.8585;
 }
 
-
-let expressaoMatematica = prompt('Digite uma expressão matemática usando "x", por exemplo, "x**2 + 2*x + 1":');
-let funcaoUsuario = createFunction(expressaoMatematica);
-
-let x = parseFloat(prompt('Digite o valor de N'));
-let x0 = (entrada1.toFixed(0) - 1);
-console.log(`Quando x é ${x}, a expressão resulta em: ${userFunction(x)}`);
-
-function derivada(f, x, h = 1e-5) {
-    return (f(x + h) - f(x - h)) / (2 * h);
+function F(x) {
+    return (f(x + h) - f(x)) / h;
 }
-function funcaoQualquer(x) {
-    return x - 3.1;
-}
-const result = derivada(funcaoQualquer, x0);
-console.log(`A derivada de f(x) = x^2 + 2x no ponto x = 3 é aproximadamente ${result}`);
-let funcao2 = x0 - 3.1;
 
-let newton = entrada1 - ((funcao2) / derivada(funcaoQualquer, x0))
-console.log(newton.toFixed(2));
+let xn;
+let i = 1;
+
+while (true) {
+    xn = x0 - f(x0) / F(x0);
+    let erro = Math.abs(xn - x0);
+
+    if (erro <= tol) {
+        break;
+    } else {
+        x0 = xn;
+        i++;
+    }
+}
+
+console.log(`Solução por Newton-Raphson: ${xn.toFixed(4)}`);
+console.log(`Quantidade de iterações: ${i}`);
+
+// const tolerancia = 0.01;
+// let N = parseFloat(prompt('Digite o valor de N'));
+// let x0 = (Math.trunc(N)-1);
+// console.log(`${x0}`);
+
+// function derivada(f, x, h = 1e-5) {
+//     return (f(x + h) - f(x - h)) / (2 * h);
+// }
+// function funcaoQualquer(x) {
+//     return x-N;
+// }
+
+// const result = derivada(funcaoQualquer, x0);
+// console.log(`A derivada de f(x) = x^2 + 2x no ponto x = 3 é aproximadamente ${result}`);
+// let funcao2 = x0-N;
+
+// for(let i=1;i<=5;i++){
+//     let x1 = x0-((funcao2)/derivada(funcaoQualquer, x0))
+//     console.log(x1.toFixed(2));
+//     x0=(x1);
+//     console.log(`meu x0 é ${x0.toFixed(2)}`)
+
+// }
