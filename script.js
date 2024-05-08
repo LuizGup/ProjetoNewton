@@ -1,35 +1,32 @@
 
-function aluno() {
-    let nomeDoAluno = document.getElementById('nomeDoAluno').value;
-    let nota1 = parseFloat(document.getElementById('nota1').value);
-    let nota2 = parseFloat(document.getElementById('nota2').value);
-    let nota3 = parseFloat(document.getElementById('nota3').value);
 
-    if (!nomeDoAluno) {
-        alert('Preencha o nome');
-        return;
-    }
-    if (!nota1 || nota1>10) {
-        alert('Preencha o primeiro número ou sua nota não pode ser maior que 10');
-        return;
-    }
-    if (!nota2 || nota2>10) {
-        alert('Preencha o primeiro número ou sua nota não pode ser maior que 10');
-        return;
-    }
-    if (!nota3 || nota3>10) {
-        alert('Preencha o primeiro número ou sua nota não pode ser maior que 10');
-        return;
-    }
+console.log(`${x0}`);
+console.log(`minha função é ${funcao}`);
+console.log(`minha função é x ${-(entrada1)}`);
 
-
-    function somar(a, b, c) {
-        return a + b + c;
-    }
-    function dividir(a, b) {
-        return a / b;
-    }
-
-    document.getElementById('resultado').innerHTML = `${nomeDoAluno}, olá! Sua nota da prova 1 é ${nota1}, da prova 2 é ${nota2} e da prova 3 é ${nota3} <br><br> Sua média é ${dividir(somar(nota1, nota2, nota3), 3)}`
-
+function crieFuncao(expression) {
+    return function (x) {
+        return eval(expression);
+    };
 }
+
+
+let expressaoMatematica = prompt('Digite uma expressão matemática usando "x", por exemplo, "x**2 + 2*x + 1":');
+let funcaoUsuario = createFunction(expressaoMatematica);
+
+let x = parseFloat(prompt('Digite o valor de N'));
+let x0 = (entrada1.toFixed(0) - 1);
+console.log(`Quando x é ${x}, a expressão resulta em: ${userFunction(x)}`);
+
+function derivada(f, x, h = 1e-5) {
+    return (f(x + h) - f(x - h)) / (2 * h);
+}
+function funcaoQualquer(x) {
+    return x - 3.1;
+}
+const result = derivada(funcaoQualquer, x0);
+console.log(`A derivada de f(x) = x^2 + 2x no ponto x = 3 é aproximadamente ${result}`);
+let funcao2 = x0 - 3.1;
+
+let newton = entrada1 - ((funcao2) / derivada(funcaoQualquer, x0))
+console.log(newton.toFixed(2));
