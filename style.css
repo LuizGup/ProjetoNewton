@@ -9,8 +9,8 @@ body{
     padding: 80px;
     padding-top: 120px;
     padding-bottom: 120px;
-    color: white;
-    background-color: rgb(31, 31, 31);
+    color: white !important;
+    background-color: rgb(31, 31, 31) !important;
     box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5) !important;
     animation: showUp 3s ease-in-out forwards;
 }
