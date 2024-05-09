@@ -27,7 +27,8 @@ while (true) {
 
 console.log(`Solução por Newton-Raphson: ${xn.toFixed(4)}`);
 console.log(`Quantidade de iterações: ${i}`);
-
+document.getElementById('newtonText').innerHTML = `Solução por Newton-Raphson: <span class="colorPessoal">${xn.toFixed(4)}</span>`;
+document.getElementById('iteracoesText').innerHTML = `Quantidade de iterações: <span class="colorPessoal2">${i}</span>`;
 
 
 

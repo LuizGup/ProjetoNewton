@@ -1,10 +1,53 @@
 body{
     height: 100vh;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(255, 255, 255);
 } 
 .container{
         height: 100%;
 }
 #div1{
-    background-color: rgb(255, 255, 255);
+    padding: 80px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    color: white;
+    background-color: rgb(31, 31, 31);
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5) !important;
+    animation: showUp 3s ease-in-out forwards;
+}
+#newtonText{
+    padding-bottom: 50px;
+}
+.border-secondary{
+    border-color: #CAD4DF !important;
+
+}
+.colorPessoal{
+    color: #67E68A;
+}
+.colorPessoal2{
+    color: #67E68A;
+}
+.duplaDeH1{
+    opacity: 0;
+    animation: appear 2s ease-in-out forwards;
+    animation-delay: 3.3s;
+}
+@keyframes appear {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes showUp {
+    0%{
+        transform: translateX(-200vh);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0vh);
+        opacity: 1;
+    }
+    
 }
